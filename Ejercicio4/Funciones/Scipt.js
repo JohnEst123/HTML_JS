@@ -6,12 +6,15 @@ function AgregarTarea() {
     // Validacion de que no ingrese texto vacio
     if (texto === "") {
         alert("No hay texto");
-        input.value="";
+        input.value = "";
     } else {
         // Crear elementos desde JS que son html
         const elementoLi = document.createElement("li");
         const contenidoTexto = document.createElement("span");
         contenidoTexto.textContent = texto;
+        contenidoTexto.onclick = () => {
+            elementoLi.classList.toggle("AccionCompletada");
+        };
         // Solo del boton
         const btnEliminar = document.createElement("button");
         btnEliminar.textContent = "Eliminar Actividad";
